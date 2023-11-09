@@ -24,11 +24,7 @@ jobs:
       run: |
         docker build -t my-app --build-arg JAR_FILE=target/application-0.0.1-SNAPSHOT.jar .
 
-    - name: run docker image
-      run: |
-        docker run -p 8080:8080 my-app
-        
-        docker stop my-running-app
+
         
     - name: Upload artifact
       uses: actions/upload-artifact@v2
