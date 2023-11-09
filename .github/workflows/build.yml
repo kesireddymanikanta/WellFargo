@@ -27,6 +27,8 @@ jobs:
     - name: run docker image
       run: |
         docker run -p 8080:8080 my-app
+        sleep 120
+        docker stop my-running-app
         
     - name: Upload artifact
       uses: actions/upload-artifact@v2
