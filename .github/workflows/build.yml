@@ -20,5 +20,6 @@ jobs:
       working-directory: ./META-INF/maven/com.helloworld/web
       run: mvn -B package --file pom.xml
     - name: Build Docker image
+      working-directory: ./META-INF/maven/com.helloworld/web
       run: |
         docker build -t my-app --build-arg JAR_FILE=target/application-0.0.1-SNAPSHOT.jar .
